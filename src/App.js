@@ -1,38 +1,40 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import { Grid } from 'react-bootstrap'
-
-import { BreadcrumbsWithIcon, BreadcrumbsSimple } from './AppBreadcrumbs';
-
+import { Grid,Row,Col } from 'react-bootstrap'
 import { BreadcrumbsItem } from 'react-breadcrumbs-dynamic';
-
-import Navbar from './Navbar'
+import { BreadcrumbsWithIcon, BreadcrumbsSimple } from './AppBreadcrumbs';
+import TopLevelNav from './TopLevelNav'
 import MainPage from './MainPage'
 import ProfilePage from './ProfilePage'
-import ToolsPage from './ToolsPage'
-
 import {base_path} from './constants'
-
+import Header from './Header'
+import Footer from './Footer'
 
 class App extends Component {
+  renderBreadcrumb(){
+    console.log(window.location.pathname)
+    if (window.location.pathname != '/')
+    {
+      console.log('Render breadcumb')      
+      return <BreadcrumbsSimple/>
+    }
+  }
   render() {
     return (
       <div>
-        <BreadcrumbsItem glyph='home' to={base_path}>
-          Home Page
+       <Header/>
+        <BreadcrumbsItem glyph='home' to='{base_path}'>
+            Home Page
         </BreadcrumbsItem>
-
-        <Navbar/>
-        <BreadcrumbsSimple/>
+        <Row>
+          <TopLevelNav/>
+          {this.renderBreadcrumb()}
+        </Row>        
         <Grid>
-          <Route exact path='/' component={MainPage} />
-          <Route exact path={`${base_path}`} component={MainPage} />
-          <Route exact path={`${base_path}/profile`} component={ProfilePage} />
-          <Route path={`${base_path}/profile/tools`} component={ToolsPage} />
+            <Route exact path={`${base_path}`} component={MainPage} />
+            <Route path={`${base_path}:id`} component={ProfilePage} />       
         </Grid>
-
-       
-
+        <Footer/>    
       </div>
     );
   }

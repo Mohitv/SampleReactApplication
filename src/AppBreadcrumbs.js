@@ -13,13 +13,15 @@ const Item = ({to, glyph,...props}) => (
   </LinkContainer>
 )
 
-const ItemWithIcon = ({to, glyph, children,...props}) => (
+const ItemWithIcon = ({to, glyph, children,...props}) => {
+ 
+  return (
   <LinkContainer to={to}>
     <Breadcrumb.Item {...props}>
       {glyph ? <span><Glyphicon glyph={glyph} /> {children}</span> : children}
     </Breadcrumb.Item>
   </LinkContainer>
-)
+)}
 
 export const BreadcrumbsSimple = () => (
   <Breadcrumbs

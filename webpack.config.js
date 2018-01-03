@@ -8,6 +8,9 @@ module.exports = {
         publicPath: '/build/',
         filename: 'bundle.js'
     },
+    devServer: {
+      historyApiFallback: true,
+    },
     module: {
         rules: [{
             test: /\.js?$/,

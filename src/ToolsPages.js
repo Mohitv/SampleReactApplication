@@ -4,7 +4,7 @@ import { BreadcrumbsItem } from 'react-breadcrumbs-dynamic';
 import NavbarLevel2 from './NavbarLevel2';
 import {base_path} from './constants'
 
-const tools_path = base_path+'/profile/tools'
+const tools_path = base_path+'/Developer Resources/tools'
 
 export const Events = ({children}) => (
   <div>
@@ -12,7 +12,7 @@ export const Events = ({children}) => (
       Events
     </BreadcrumbsItem>
     <h2>Events tool Page</h2>
-    <NavbarLevel2/>
+    
   </div>
 )
 
@@ -22,7 +22,7 @@ export const Statistics = ({children}) => (
       Statistics
     </BreadcrumbsItem>
     <h2>Statistics tool Page</h2>
-    <NavbarLevel2/>
+    
   </div>
 )
 
@@ -32,7 +32,7 @@ export const Settings = ({children}) => (
       Settings
     </BreadcrumbsItem>
     <h2>Settings tool Page</h2>
-    <NavbarLevel2/>
+   
   </div>
 )
 

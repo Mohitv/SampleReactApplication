@@ -26,10 +26,8 @@ const MenuItem = ({to,...props}) => (
 
 
 const TheNavbar = ({children}) => (
-  <Navbar inverse collapseOnSelect>
-  <Navbar.Collapse>
-  <Nav pullRight>
   
+  <Nav>  
           <NavItem eventKey={1} to={base_path+'/profile/tools/events'}>
             <Glyphicon glyph="Events" /> Events
           </NavItem>
@@ -40,8 +38,7 @@ const TheNavbar = ({children}) => (
             <Glyphicon glyph="Settings" /> Settings
           </NavItem>
         </Nav>
-  </Navbar.Collapse>
-  </Navbar>
+
 )
 
 export default TheNavbar

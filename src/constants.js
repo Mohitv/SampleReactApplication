@@ -1,1 +1,1 @@
-export const base_path = '/tda'
+export const base_path = '/'
